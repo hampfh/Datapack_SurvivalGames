@@ -1,4 +1,5 @@
 tellraw @a ["",{"selector":"@a[tag=InGame]","bold":true,"color":"gold"},{"text":" won the game","color":"dark_aqua"}]
+tellraw @a ["",{"text":"The game took ","color":"dark_aqua"},{"score":{"name":"#game","objective":"Min_Timer"},"bold":true,"color":"dark_aqua"},{"text":" minutes and ","color":"dark_aqua"},{"score":{"name":"#game","objective":"Sec_Timer"},"bold":true,"color":"dark_aqua"},{"text":" seconds","color":"dark_aqua"}]
 
 # Add winner tag
 tag @a[tag=InGame] add Winner

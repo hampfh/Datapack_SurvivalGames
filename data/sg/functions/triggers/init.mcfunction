@@ -5,14 +5,18 @@ tellraw @a ["",{"text":"Datapack author: ","color":"dark_aqua"},{"text":"Hampfh"
 gamerule commandBlockOutput false
 gamerule doImmediateRespawn true
 gamerule showDeathMessages true
+gamerule doTileDrops false
 
 # Setup kill variable
 scoreboard objectives add kills playerKillCount "Player kills"
 scoreboard objectives setdisplay list kills
 scoreboard objectives add Deaths deathCount
 scoreboard objectives add GameState dummy
+
 scoreboard objectives add Timer dummy
 scoreboard objectives add Sec_Timer dummy
+scoreboard objectives add Min_Timer dummy
+
 scoreboard objectives add PlayersAlive dummy 
 # Settings
 scoreboard objectives add Difficulty dummy 

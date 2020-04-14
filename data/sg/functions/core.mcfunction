@@ -9,10 +9,13 @@
 # Winner - last player that won the game
 # InGame - determinds if a player is in game or out of game
 
+# Increase tick timer
+execute if score #game Timer matches ..20 run scoreboard players add #game Timer 1
+
 # Run lobby states
 execute if score #game GameState matches 0 run function sg:states/lobby 
 execute if score #game GameState matches 1 run function sg:states/game_preparation
 execute if score #game GameState matches 2 run function sg:states/game
 
-# Reset trigger Trig_GameStart
-execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set @s Trig_GameStart 0
+# Reset tick timer
+execute if score #game Timer matches 20.. run scoreboard players set #game Timer 0

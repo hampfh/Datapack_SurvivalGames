@@ -1,5 +1,7 @@
 tag @a remove InGame
 
+gamerule doTileDrops false
+
 # Build lobby
 function sg:internal/buildlobby
 

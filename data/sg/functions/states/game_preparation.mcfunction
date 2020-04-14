@@ -1,11 +1,7 @@
 # Game preparation state
 
-# Increase timer
-execute if score #game Timer matches ..20 run scoreboard players add #game Timer 1
 # Increaes second
 execute if score #game Timer matches 20.. run scoreboard players remove #game Sec_Timer 1
-# Reset tick timer
-execute if score #game Timer matches 20.. run scoreboard players set #game Timer 0
 
 # Swap gamestate when Sec_Timer reaches 0
 execute if score #game Sec_Timer matches ..0 run scoreboard players set #game GameState 2
@@ -13,6 +9,9 @@ execute if score #game Sec_Timer matches ..0 run scoreboard players set #game Ga
 # Display sidebar
 scoreboard players operation TimeLeft: DisplayVariable = #game Sec_Timer
 team join INTERNAL_SIDEBAR TimeLeft:
+
+# If "start game" sign is pressed again decrease time
+execute if score #game Sec_Timer matches ..59 as @a[scores={Trig_GameStart=1..}] if score #game Sec_Timer matches 11.. run scoreboard players remove #game Sec_Timer 5
 
 # Start game
 execute if score #game Sec_Timer matches ..0 run function sg:state_initializers/post_game_preparation

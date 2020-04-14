@@ -10,8 +10,14 @@ scoreboard players set @a[scores={Deaths=1..}] Deaths 0
 gamemode spectator @a[tag=!InGame]
 team join Spectator @a[tag=!InGame]
 
+# Increase timer
+execute if score #game Timer matches 20.. run scoreboard players add #game Sec_Timer 1
+execute if score #game Sec_Timer matches 60.. run scoreboard players add #game Min_Timer 1
+execute if score #game Sec_Timer matches 60.. run scoreboard players set #game Sec_Timer 0
+
 # Display sidebar
 scoreboard players operation PlayersAlive: DisplayVariable = #game PlayersAlive
+scoreboard players operation Minutes: DisplayVariable = #game Min_Timer
 
 # Detect game end
 execute if score #game PlayersAlive matches ..1 run function sg:state_initializers/post_game
