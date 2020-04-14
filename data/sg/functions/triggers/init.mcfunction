@@ -7,6 +7,7 @@ gamerule doImmediateRespawn true
 gamerule showDeathMessages true
 gamerule doTileDrops false
 gamerule spectatorsGenerateChunks false
+gamerule spawnRadius 0
 
 # Setup kill variable
 scoreboard objectives add kills playerKillCount "Player kills"
