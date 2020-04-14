@@ -1,4 +1,3 @@
-
 tellraw @a ["",{"selector":"@a[gamemode=survival]","bold":true,"color":"gold"},{"text":" won the game","color":"dark_aqua"}]
 
 # Add winner tag
@@ -18,3 +17,7 @@ scoreboard players reset * DisplayVariable
 
 # Set everybodies gamemode to adventure
 gamemode adventure @a[gamemode=!creative]
+
+# Reset worldborder
+worldborder set 25 0
+worldborder warning distance 0

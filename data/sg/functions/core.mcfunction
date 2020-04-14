@@ -7,6 +7,7 @@
 # Tag definition
 # Moderator - access to executing signs
 # Winner - last player that won the game
+# InGame - determinds if a player is in game or out of game
 
 # Lobby commands
 execute if score #game GameState matches 0 run gamemode adventure @a[gamemode=!creative,gamemode=!spectator]
@@ -56,6 +57,9 @@ execute if score #game GameState matches 2 as @a[scores={Deaths=1..}, gamemode=s
 execute if score #game GameState matches 2 if score #game PlayersAlive matches 2.. as @a[scores={Deaths=1..}, gamemode=survival] run tellraw @a ["",{"text":"There are now ","color":"dark_red"},{"score":{"name":"#game","objective":"PlayersAlive"},"bold":true,"color":"dark_red"},{"text":" players left in the match","color":"dark_red"}]
 execute if score #game GameState matches 2 run gamemode spectator @a[scores={Deaths=1..}]
 execute if score #game GameState matches 2 run scoreboard players set @a[scores={Deaths=1..}] Deaths 0
+
+# Convert all non ingame players to spectators
+execute if score #game GameState matches 2 run gamemode spectator @a[tag=!InGame]
 
 # Display sidebar
 function sg:internal/sidebar

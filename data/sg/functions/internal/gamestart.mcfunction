@@ -4,12 +4,16 @@ scoreboard players set #game PlayersAlive 0
 
 effect clear @a
 
+# Give all active players the InGameTag
+tag @a add InGame
+
 # Clear winner tag from players
 tag @a[tag=Winner] remove Winner
 
 # Reset border
 worldborder set 1500 0
 worldborder center 0 0
+worldborder warning distance 100
 
 # Set shrinking value
 worldborder set 10 1800

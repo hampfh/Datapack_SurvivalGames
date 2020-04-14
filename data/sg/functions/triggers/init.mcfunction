@@ -36,4 +36,11 @@ worldborder warning distance 100
 
 setworldspawn 0 205 0
 
+# Pre load chunks
+tp @a 0 255 0
+
 function sg:internal/buildlobby 
+
+# Reset worldborder
+worldborder set 25 0
+worldborder warning distance 0
