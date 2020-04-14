@@ -32,7 +32,5 @@ scoreboard players reset * DisplayVariable
 scoreboard objectives setdisplay sidebar DisplayVariable
 team join INTERNAL_SIDEBAR PlayersAlive:
 
-function sg:internal/demolishlobby
-
 # Set shrinking value
 worldborder set 10 1800

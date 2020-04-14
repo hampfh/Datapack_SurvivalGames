@@ -15,4 +15,4 @@ scoreboard players operation TimeLeft: DisplayVariable = #game Sec_Timer
 team join INTERNAL_SIDEBAR TimeLeft:
 
 # Start game
-execute if score #game Sec_Timer matches ..0 run function sg:internal/gamestart
+execute if score #game Sec_Timer matches ..0 run function sg:state_initializers/post_game_preparation
