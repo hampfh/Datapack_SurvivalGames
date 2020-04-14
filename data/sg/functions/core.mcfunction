@@ -52,9 +52,9 @@ execute if score #game GameState matches 1 if score #game Timer matches ..0 run 
 execute if score #game GameState matches 1 if score #game Timer matches ..0 run scoreboard players set #game GameState 2
 
 # During game
+execute if score #game GameState matches 2 as @a[scores={Deaths=1..}, gamemode=survival] run scoreboard players remove #game PlayersAlive 1
+execute if score #game GameState matches 2 if score #game PlayersAlive matches 2.. as @a[scores={Deaths=1..}, gamemode=survival] run tellraw @a ["",{"text":"There are now ","color":"dark_red"},{"score":{"name":"#game","objective":"PlayersAlive"},"bold":true,"color":"dark_red"},{"text":" players left in the match","color":"dark_red"}]
 execute if score #game GameState matches 2 run gamemode spectator @a[scores={Deaths=1..}]
-execute if score #game GameState matches 2 as @a[scores={Deaths=1..}] run scoreboard players remove #game PlayersAlive 1
-execute if score #game GameState matches 2 if score #game PlayersAlive matches 2.. as @a[scores={Deaths=1..}] run tellraw @a ["",{"text":"There are now ","color":"dark_red"},{"score":{"name":"#game","objective":"PlayersAlive"},"bold":true,"color":"dark_red"},{"text":" players left in the match","color":"dark_red"}]
 execute if score #game GameState matches 2 run scoreboard players set @a[scores={Deaths=1..}] Deaths 0
 
 # Display sidebar
