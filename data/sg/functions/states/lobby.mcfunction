@@ -19,7 +19,4 @@ effect give @a[gamemode=!creative,gamemode=!spectator,tag=Winner] minecraft:glow
 execute positioned 0 205 0 run tp @a[gamemode=!creative, gamemode=!spectator,distance=30..] 0 205 0
 
 # Check for game start command
-execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set #game Sec_Timer 60
-execute as @a[scores={Trig_GameStart=1..}] run tellraw @a ["",{"text":"Game start triggered by ","color":"dark_aqua"},{"selector":"@s","bold":true,"color":"gold"}]
-execute as @a[scores={Trig_GameStart=1..}] run tellraw @a ["",{"text":"Game starts in 60 seconds","color":"dark_aqua"}]
-execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set #game GameState 1
+execute as @a[scores={Trig_GameStart=1..}] run function sg:state_initializers/pre_game_preparation

@@ -6,13 +6,14 @@ gamerule commandBlockOutput false
 gamerule doImmediateRespawn true
 gamerule showDeathMessages true
 gamerule doTileDrops false
+gamerule spectatorsGenerateChunks false
 
 # Setup kill variable
 scoreboard objectives add kills playerKillCount "Player kills"
-scoreboard objectives setdisplay list kills
+scoreboard objectives add Leaves minecraft.custom:minecraft.leave_game
 scoreboard objectives add Deaths deathCount
 scoreboard objectives add GameState dummy
-
+# Timers
 scoreboard objectives add Timer dummy
 scoreboard objectives add Sec_Timer dummy
 scoreboard objectives add Min_Timer dummy
@@ -28,6 +29,7 @@ scoreboard objectives add Trig_NoCoords trigger
 
 scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Survival Games--"
 scoreboard objectives setdisplay sidebar DisplayVariable
+scoreboard objectives setdisplay list kills
 
 # Add teams
 team add INTERNAL_SIDEBAR

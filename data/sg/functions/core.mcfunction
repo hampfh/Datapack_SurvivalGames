@@ -9,6 +9,11 @@
 # Winner - last player that won the game
 # InGame - determinds if a player is in game or out of game
 
+# Take care of leavers
+execute as @a[scores={Leaves=0}] run tag @s remove InGame
+execute as @a[scores={Leaves=0}] run scoreboard players reset * kills
+execute as @a[scores={Leaves=0}] run scoreboard players reset @s Leaves
+
 # Increase tick timer
 execute if score #game Timer matches ..20 run scoreboard players add #game Timer 1
 

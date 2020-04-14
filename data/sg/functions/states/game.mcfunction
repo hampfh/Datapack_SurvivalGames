@@ -15,6 +15,10 @@ execute if score #game Timer matches 20.. run scoreboard players add #game Sec_T
 execute if score #game Sec_Timer matches 60.. run scoreboard players add #game Min_Timer 1
 execute if score #game Sec_Timer matches 60.. run scoreboard players set #game Sec_Timer 0
 
+# Check active players
+scoreboard players set #game PlayersAlive 0
+execute as @a[tag=InGame] run scoreboard players add #game PlayersAlive 1
+
 # Display sidebar
 scoreboard players operation PlayersAlive: DisplayVariable = #game PlayersAlive
 scoreboard players operation Minutes: DisplayVariable = #game Min_Timer
