@@ -7,6 +7,10 @@ effect clear @a
 # Give all active players the InGameTag
 tag @a add InGame
 
+# Set time to day
+time set 0
+weather clear
+
 # Clear winner tag from players
 tag @a[tag=Winner] remove Winner
 

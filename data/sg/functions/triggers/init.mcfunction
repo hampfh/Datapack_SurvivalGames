@@ -27,6 +27,8 @@ scoreboard objectives setdisplay sidebar DisplayVariable
 # Add teams
 team add INTERNAL_SIDEBAR
 team modify INTERNAL_SIDEBAR color dark_purple
+team add Spectator
+team modify Spectator color gray
 
 scoreboard players set #game Difficulty 0
 scoreboard players set #game NoCoords 1

@@ -60,6 +60,7 @@ execute if score #game GameState matches 2 run scoreboard players set @a[scores=
 
 # Convert all non ingame players to spectators
 execute if score #game GameState matches 2 run gamemode spectator @a[tag=!InGame]
+execute if score #game GameState matches 2 run team join Spectator @a[tag=!InGame]
 
 # Display sidebar
 function sg:internal/sidebar

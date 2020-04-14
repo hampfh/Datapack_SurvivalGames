@@ -18,6 +18,9 @@ scoreboard players reset * DisplayVariable
 # Set everybodies gamemode to adventure
 gamemode adventure @a[gamemode=!creative]
 
+# Empty spectator team
+team empty Spectator
+
 # Reset worldborder
 worldborder set 25 0
 worldborder warning distance 0
