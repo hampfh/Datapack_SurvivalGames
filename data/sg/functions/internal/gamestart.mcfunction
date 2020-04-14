@@ -1,6 +1,7 @@
 # Reset kills 
-scoreboard players set @a kills 0
+scoreboard players reset * kills
 scoreboard players set #game PlayersAlive 0
+scoreboard players reset * Deaths
 
 effect clear @a
 
@@ -19,15 +20,12 @@ worldborder set 1500 0
 worldborder center 0 0
 worldborder warning distance 100
 
-# Set shrinking value
-worldborder set 10 1800
-
-spreadplayers 0 0 200 725 false @a[gamemode=!creative, gamemode=!spectator]
+spreadplayers 0 0 200 725 false @a[tag=InGame]
 
 # Set players alive count
-execute as @a[gamemode=adventure] run scoreboard players add #game PlayersAlive 1
+execute as @a[tag=InGame] run scoreboard players add #game PlayersAlive 1
 
-gamemode survival @a[gamemode=adventure]
+gamemode survival @a[tag=InGame]
 
 # Setup sidebar
 scoreboard players reset * DisplayVariable
@@ -35,3 +33,6 @@ scoreboard objectives setdisplay sidebar DisplayVariable
 team join INTERNAL_SIDEBAR PlayersAlive:
 
 function sg:internal/demolishlobby
+
+# Set shrinking value
+worldborder set 10 1800

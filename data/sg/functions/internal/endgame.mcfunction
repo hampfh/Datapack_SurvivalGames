@@ -2,6 +2,7 @@ tellraw @a ["",{"selector":"@a[gamemode=survival]","bold":true,"color":"gold"},{
 
 # Add winner tag
 tag @a[gamemode=survival] add Winner
+tag @a remove InGame
 
 scoreboard players set #game PlayersAlive 0
 # Reset state to lobby state
@@ -12,9 +13,6 @@ kill @e[type=minecraft:item]
 
 function sg:internal/buildlobby
 
-# Clear sidebar
-scoreboard players reset * DisplayVariable
-
 # Set everybodies gamemode to adventure
 gamemode adventure @a[gamemode=!creative]
 
@@ -24,3 +22,6 @@ team empty Spectator
 # Reset worldborder
 worldborder set 25 0
 worldborder warning distance 0
+
+# Clear sidebar
+scoreboard players reset * DisplayVariable

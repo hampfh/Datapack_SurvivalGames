@@ -12,6 +12,7 @@ scoreboard objectives setdisplay list kills
 scoreboard objectives add Deaths deathCount
 scoreboard objectives add GameState dummy
 scoreboard objectives add Timer dummy
+scoreboard objectives add Sec_Timer dummy
 scoreboard objectives add PlayersAlive dummy 
 # Settings
 scoreboard objectives add Difficulty dummy 
