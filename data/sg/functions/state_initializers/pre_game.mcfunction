@@ -24,10 +24,10 @@ tag @a[tag=Winner] remove Winner
 
 # Reset border
 worldborder set 1500 0
-worldborder center 0 0
+execute at @e[type=minecraft:armor_stand, name=Anchor] run worldborder center ~ ~
 worldborder warning distance 100
 
-spreadplayers 0 0 200 725 false @a[tag=InGame]
+execute at @e[type=minecraft:armor_stand, name=Anchor] run spreadplayers ~ ~ 200 725 false @a[tag=InGame]
 
 # Set players alive count
 execute as @a[tag=InGame] run scoreboard players add #game PlayersAlive 1

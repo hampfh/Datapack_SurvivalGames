@@ -16,7 +16,7 @@ effect give @a[gamemode=!creative,gamemode=!spectator] minecraft:saturation 1000
 effect give @a[gamemode=!creative,gamemode=!spectator,tag=Winner] minecraft:glowing 1000000 255 true
 
 # Teleport all players out of range back to lobby
-execute positioned 0 205 0 run tp @a[gamemode=!creative, gamemode=!spectator,distance=30..] 0 205 0
+execute at @e[type=minecraft:armor_stand, name=Anchor] positioned ~ 205 ~ run tp @a[gamemode=!creative, gamemode=!spectator,distance=30.., tag=!Movable] ~ 205 ~
 
 # Check for game start command
 execute as @a[scores={Trig_GameStart=1..}] run function sg:state_initializers/pre_game_preparation

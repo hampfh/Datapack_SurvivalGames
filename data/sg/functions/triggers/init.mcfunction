@@ -32,6 +32,9 @@ scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Survival Games-
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list kills
 
+# Summon anchor
+summon armor_stand 0 400 0 {Invisible:1b,Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,Small:1b,CustomName:"{\"text\":\"Anchor\"}"}
+
 # Add teams
 team add INTERNAL_SIDEBAR
 team modify INTERNAL_SIDEBAR color dark_purple
@@ -41,16 +44,16 @@ team modify Spectator color gray
 scoreboard players set #game Difficulty 0
 scoreboard players set #game NoCoords 1
 scoreboard players set #game GameState 0
+scoreboard players set #game Timer 0
 
-worldborder warning distance 100
-
-setworldspawn 0 205 0
+execute at @e[type=minecraft:armor_stand, name=Anchor] run setworldspawn ~ 205 ~
 
 # Pre load chunks
-tp @a 0 255 0
+execute at @e[type=minecraft:armor_stand, name=Anchor] run tp @a ~ 205 ~
 
 function sg:internal/buildlobby 
 
 # Reset worldborder
 worldborder set 25 0
 worldborder warning distance 0
+execute at @e[type=minecraft:armor_stand, name=Anchor] run worldborder center ~ ~

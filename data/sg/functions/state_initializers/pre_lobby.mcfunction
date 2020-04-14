@@ -1,4 +1,6 @@
-tag @a remove InGame
+# Lobby state initializer
+
+worldborder set 10000 0
 
 gamerule doTileDrops false
 
@@ -7,3 +9,5 @@ function sg:internal/buildlobby
 
 # Set everybodies gamemode to adventure
 gamemode adventure @a[gamemode=!creative]
+
+scoreboard players set #game GameState 0

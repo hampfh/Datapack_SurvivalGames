@@ -3,6 +3,7 @@ tellraw @a ["",{"text":"The game took ","color":"dark_aqua"},{"score":{"name":"#
 
 # Add winner tag
 tag @a[tag=InGame] add Winner
+tag @a remove InGame
 
 scoreboard players set #game PlayersAlive 0
 # Reset state to lobby state
@@ -21,4 +22,4 @@ worldborder warning distance 0
 # Clear sidebar
 scoreboard players reset * DisplayVariable
 
-function sg:state_initializers/pre_lobby
+function sg:state_initializers/pre_move
