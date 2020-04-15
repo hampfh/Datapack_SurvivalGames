@@ -7,8 +7,6 @@ scoreboard players reset * Deaths
 advancement revoke @a everything
 
 effect clear @a
-# Give all players invisibility in the start
-effect give @a[tag=InGame] minecraft:invisibility 70 1 true
 
 # Give all active players the InGameTag
 tag @a add InGame
@@ -47,3 +45,6 @@ team join INTERNAL_SIDEBAR Minutes:
 
 # Set shrinking value
 worldborder set 20 1800
+
+# Give all players invisibility in the start
+effect give @a[tag=InGame] minecraft:invisibility 70 1 true
