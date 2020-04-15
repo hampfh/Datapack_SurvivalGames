@@ -3,6 +3,9 @@ scoreboard players reset * kills
 scoreboard players set #game PlayersAlive 0
 scoreboard players reset * Deaths
 
+# Revoke advancements
+advancement revoke @a everything
+
 effect clear @a
 
 # Give all active players the InGameTag

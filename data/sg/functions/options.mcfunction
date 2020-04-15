@@ -20,8 +20,16 @@ execute as @a[scores={Trig_NoCoords=1..}] run scoreboard players set @s Trig_NoC
 execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_DeathMsg
 execute if score #game GameState matches 0..1 as @a[scores={Trig_DeathMsg=1..}] run scoreboard players add #game DeathMsg 1
 execute if score #game GameState matches 0..1 if score #game DeathMsg matches 2.. run scoreboard players set #game DeathMsg 0
-execute if score #game GameState matches 0..1 as @a[scores={Trig_DeathMsg=1..}] if score #game DeathMsg matches 0 run gamerule showDeathMessages true
-execute if score #game GameState matches 0..1 as @a[scores={Trig_DeathMsg=1..}] if score #game DeathMsg matches 1 run gamerule showDeathMessages false
+execute if score #game GameState matches 0..1 as @a[scores={Trig_DeathMsg=1..}] if score #game DeathMsg matches 0 run gamerule showDeathMessages false
+execute if score #game GameState matches 0..1 as @a[scores={Trig_DeathMsg=1..}] if score #game DeathMsg matches 1 run gamerule showDeathMessages true
 execute as @a[scores={Trig_DeathMsg=1..}] run scoreboard players set @s Trig_DeathMsg 0
-# Reset everybodies triggers
+###################### ShowPrgress ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_ShowPrgress
+execute if score #game GameState matches 0..1 as @a[scores={Trig_ShowPrgress=1..}] run scoreboard players add #game ShowPrgress 1
+execute if score #game GameState matches 0..1 if score #game ShowPrgress matches 2.. run scoreboard players set #game ShowPrgress 0
+execute if score #game GameState matches 0..1 as @a[scores={Trig_ShowPrgress=1..}] if score #game ShowPrgress matches 0 run gamerule announceAdvancements false
+execute if score #game GameState matches 0..1 as @a[scores={Trig_ShowPrgress=1..}] if score #game ShowPrgress matches 1 run gamerule announceAdvancements true
+execute as @a[scores={Trig_ShowPrgress=1..}] run scoreboard players set @s Trig_ShowPrgress 0
+
+# Reset gamestart trigger
 execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set @s Trig_GameStart 0
