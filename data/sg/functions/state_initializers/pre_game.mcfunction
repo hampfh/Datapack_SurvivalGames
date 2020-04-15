@@ -7,6 +7,8 @@ scoreboard players reset * Deaths
 advancement revoke @a everything
 
 effect clear @a
+# Give all players invisibility in the start
+effect give @a[tag=InGame] minecraft:invisibility 70 1 true
 
 # Give all active players the InGameTag
 tag @a add InGame
@@ -26,9 +28,9 @@ gamerule doTileDrops true
 tag @a[tag=Winner] remove Winner
 
 # Reset border
-worldborder set 1500 0
+worldborder set 1800 0
 execute at @e[type=minecraft:armor_stand, name=Anchor] run worldborder center ~ ~
-worldborder warning distance 100
+worldborder warning distance 200
 
 execute at @e[type=minecraft:armor_stand, name=Anchor] run spreadplayers ~ ~ 200 725 false @a[tag=InGame]
 
@@ -44,4 +46,4 @@ team join INTERNAL_SIDEBAR PlayersAlive:
 team join INTERNAL_SIDEBAR Minutes:
 
 # Set shrinking value
-worldborder set 10 1800
+worldborder set 20 1800
