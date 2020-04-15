@@ -8,6 +8,7 @@ gamerule showDeathMessages true
 gamerule doTileDrops false
 gamerule spectatorsGenerateChunks false
 gamerule spawnRadius 0
+gamerule doWeatherCycle false
 
 # Setup kill variable
 scoreboard objectives add kills playerKillCount "Player kills"
@@ -31,10 +32,13 @@ scoreboard objectives add Trig_ChangeDiff trigger
 scoreboard objectives add Trig_NoCoords trigger
 scoreboard objectives add Trig_DeathMsg trigger
 scoreboard objectives add Trig_ShowPrgress trigger
+scoreboard objectives add Trig_NewMap trigger
 
 scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Survival Games--"
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list kills
+
+weather clear
 
 # Summon anchor
 summon armor_stand 0 400 0 {Invisible:1b,Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,Small:1b,CustomName:"{\"text\":\"Anchor\"}"}
