@@ -22,4 +22,4 @@ worldborder warning distance 0
 # Clear sidebar
 scoreboard players reset * DisplayVariable
 
-function sg:state_initializers/pre_move
+function sg:state_initializers/pre_lobby

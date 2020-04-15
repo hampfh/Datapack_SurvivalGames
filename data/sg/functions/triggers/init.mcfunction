@@ -23,10 +23,12 @@ scoreboard objectives add PlayersAlive dummy
 # Settings
 scoreboard objectives add Difficulty dummy 
 scoreboard objectives add NoCoords dummy
+scoreboard objectives add DeathMsg dummy
 
 scoreboard objectives add Trig_GameStart trigger
 scoreboard objectives add Trig_ChangeDiff trigger
 scoreboard objectives add Trig_NoCoords trigger
+scoreboard objectives add Trig_DeathMsg trigger
 
 scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Survival Games--"
 scoreboard objectives setdisplay sidebar DisplayVariable
@@ -45,6 +47,7 @@ scoreboard players set #game Difficulty 0
 scoreboard players set #game NoCoords 1
 scoreboard players set #game GameState 0
 scoreboard players set #game Timer 0
+scoreboard players set #game DeathMsg 1
 
 execute at @e[type=minecraft:armor_stand, name=Anchor] run setworldspawn ~ 205 ~
 

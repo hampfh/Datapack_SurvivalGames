@@ -1,5 +1,8 @@
 # Moves lobby, spawn and players to another area
 
+# Remove old lobby
+function sg:internal/demolishlobby
+
 # Disable world border
 worldborder set 30000
 
