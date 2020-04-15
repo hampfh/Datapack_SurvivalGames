@@ -28,8 +28,8 @@ def main():
     print("###################### {0} ######################".format(optionName))
     print("execute if score #game GameState matches {0} as @a[scores={{Trig_{1}=1..}}] run scoreboard players add #game {1} 1".format(stateSelector, optionName))
     print("execute if score #game GameState matches {0} if score #game {1} matches 2.. run scoreboard players set #game {1} 0".format(stateSelector, optionName))
-    print("execute if score #game GameState matches {2} as @a[scores={{Trig_{0}=1..}}] if score #game {0} matches 0 run gamerule {1} true".format(optionName, gamerule, stateSelector))
-    print("execute if score #game GameState matches {2} as @a[scores={{Trig_{0}=1..}}] if score #game {0} matches 1 run gamerule {1} false".format(optionName, gamerule, stateSelector))
+    print("execute if score #game GameState matches {2} as @a[scores={{Trig_{0}=1..}}] if score #game {0} matches 0 run gamerule {1} false".format(optionName, gamerule, stateSelector))
+    print("execute if score #game GameState matches {2} as @a[scores={{Trig_{0}=1..}}] if score #game {0} matches 1 run gamerule {1} true".format(optionName, gamerule, stateSelector))
     print("execute as @a[scores={{Trig_{0}=1..}}] run scoreboard players set @s Trig_{0} 0".format(optionName))
     
     input("Press enter to exit")
