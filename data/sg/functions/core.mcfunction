@@ -11,9 +11,10 @@
 # InGame - determinds if a player is in game or out of game
 
 # Take care of leavers
-execute as @a[scores={Leaves=0}] run tag @s remove InGame
-execute as @a[scores={Leaves=0}] run scoreboard players reset * kills
-execute as @a[scores={Leaves=0}] run scoreboard players reset @s Leaves
+execute as @a[scores={Leaves=1..}] run tag @s remove InGame
+execute as @a[scores={Leaves=1..}] run scoreboard players reset * kills
+execute as @a[scores={Leaves=1..}] if score #game GameState matches 0..1 run gamemode adventure @s
+execute as @a[scores={Leaves=1..}] run scoreboard players reset @s Leaves
 
 # Increase tick timer
 execute if score #game Timer matches ..20 run scoreboard players add #game Timer 1
