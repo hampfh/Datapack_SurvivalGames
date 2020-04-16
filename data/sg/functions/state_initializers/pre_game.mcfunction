@@ -33,7 +33,7 @@ worldborder set 1800 0
 execute at @e[type=minecraft:armor_stand, name=Anchor] run worldborder center ~ ~
 worldborder warning distance 200
 
-execute at @e[type=minecraft:armor_stand, name=Anchor] run spreadplayers ~ ~ 200 725 false @a[tag=InGame]
+execute at @e[type=minecraft:armor_stand, name=Anchor] run spreadplayers ~ ~ 200 840 false @a[tag=InGame]
 
 # Set players alive count
 execute as @a[tag=InGame] run scoreboard players add #game PlayersAlive 1
@@ -51,3 +51,7 @@ worldborder set 20 1800
 
 # Give all players invisibility in the start
 effect give @a[tag=InGame] minecraft:invisibility 70 1 true
+
+# Show title
+title @a[tag=InGame] subtitle {"text":"Last man standing wins!","color":"dark_aqua"}
+title @a[tag=InGame] title {"text":"Fight!","bold":true,"color":"dark_aqua"}
