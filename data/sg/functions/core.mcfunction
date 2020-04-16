@@ -9,6 +9,7 @@
 # Moderator - access to executing signs
 # Winner - last player that won the game
 # InGame - determinds if a player is in game or out of game
+# HasLoggedIn - is given to all users after they login for the first time
 
 # Take care of leavers
 execute as @a[scores={Leaves=1..}] run tag @s remove InGame
@@ -16,6 +17,9 @@ execute as @a[scores={Leaves=1..}] run scoreboard players reset * Kills
 execute as @a[scores={Leaves=1..}] run effect clear @s
 execute as @a[scores={Leaves=1..}] if score #game GameState matches 0..1 run gamemode adventure @s
 execute as @a[scores={Leaves=1..}] run scoreboard players reset @s Leaves
+# Welcome new members
+execute as @a[tag=!HasLoggedIn] run tellraw @a ["",{"selector":"@s","bold":true,"color":"gold"},{"text":" entered the server for the first time, welcome!","color":"dark_aqua"}]
+execute as @a[tag=!HasLoggedIn] run tag @s add HasLoggedIn
 
 # Increase tick timer
 execute if score #game Timer matches ..20 run scoreboard players add #game Timer 1

@@ -35,6 +35,20 @@ execute if score #game GameState matches 0..1 run scoreboard players enable @a[t
 execute if score #game GameState matches 0..1 as @a[scores={Trig_NewMap=1..}] run tellraw @a ["",{"text":"Generating new terrain...","color":"dark_aqua","clickEvent":{"action":"open_url","value":"www.github.com/hampfh"},"hoverEvent":{"action":"show_item","value":"Open site"}}]
 execute if score #game GameState matches 0..1 as @a[scores={Trig_NewMap=1..}] run function sg:state_initializers/pre_move
 execute as @a[scores={Trig_NewMap=1..}] run scoreboard players set @s Trig_NewMap 0
+###################### UHCMode ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_UHCMode
+execute if score #game GameState matches 0..1 as @a[scores={Trig_UHCMode=1..}] run scoreboard players add #game UHCMode 1
+execute if score #game GameState matches 0..1 if score #game UHCMode matches 2.. run scoreboard players set #game UHCMode 0
+execute if score #game GameState matches 0..1 as @a[scores={Trig_UHCMode=1..}] if score #game UHCMode matches 0 run gamerule naturalRegeneration true
+execute if score #game GameState matches 0..1 as @a[scores={Trig_UHCMode=1..}] if score #game UHCMode matches 1 run gamerule naturalRegeneration false
+execute as @a[scores={Trig_UHCMode=1..}] run scoreboard players set @s Trig_UHCMode 0
+###################### FallDamage ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_FallDamage
+execute if score #game GameState matches 0..1 as @a[scores={Trig_FallDamage=1..}] run scoreboard players add #game FallDamage 1
+execute if score #game GameState matches 0..1 if score #game FallDamage matches 2.. run scoreboard players set #game FallDamage 0
+execute if score #game GameState matches 0..1 as @a[scores={Trig_FallDamage=1..}] if score #game FallDamage matches 0 run gamerule fallDamage false
+execute if score #game GameState matches 0..1 as @a[scores={Trig_FallDamage=1..}] if score #game FallDamage matches 1 run gamerule fallDamage true
+execute as @a[scores={Trig_FallDamage=1..}] run scoreboard players set @s Trig_FallDamage 0
 
 # Reset gamestart trigger
 execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set @s Trig_GameStart 0

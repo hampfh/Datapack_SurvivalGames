@@ -10,9 +10,11 @@ gamerule spectatorsGenerateChunks false
 gamerule spawnRadius 0
 gamerule doWeatherCycle false
 
-# Setup kill variable
+# Setup variables
+scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Survival Games--"
 scoreboard objectives add Kills playerKillCount "\u00A7a\u00A7l--Player Kills--"
 scoreboard objectives add Leaves minecraft.custom:minecraft.leave_game
+scoreboard objectives add PlayersAlive dummy 
 scoreboard objectives add Deaths deathCount
 scoreboard objectives add GameState dummy
 scoreboard objectives add Wins dummy
@@ -21,12 +23,13 @@ scoreboard objectives add Timer dummy
 scoreboard objectives add Sec_Timer dummy
 scoreboard objectives add Min_Timer dummy
 
-scoreboard objectives add PlayersAlive dummy 
 # Settings
 scoreboard objectives add Difficulty dummy 
 scoreboard objectives add NoCoords dummy
 scoreboard objectives add DeathMsg dummy
 scoreboard objectives add ShowPrgress dummy
+scoreboard objectives add UHCMode dummy
+scoreboard objectives add FallDamage dummy
 
 scoreboard objectives add Trig_GameStart trigger
 scoreboard objectives add Trig_ChangeDiff trigger
@@ -34,8 +37,9 @@ scoreboard objectives add Trig_NoCoords trigger
 scoreboard objectives add Trig_DeathMsg trigger
 scoreboard objectives add Trig_ShowPrgress trigger
 scoreboard objectives add Trig_NewMap trigger
+scoreboard objectives add Trig_UHCMode trigger
+scoreboard objectives add Trig_FallDamage trigger
 
-scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Survival Games--"
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list Wins
 
@@ -56,6 +60,8 @@ scoreboard players set #game GameState 0
 scoreboard players set #game Timer 0
 scoreboard players set #game DeathMsg 1
 scoreboard players set #game ShowPrgress 1
+scoreboard players set #game UHCMode 0
+scoreboard players set #game FallDamage 1
 
 execute at @e[type=minecraft:armor_stand, name=Anchor] run setworldspawn ~ 205 ~
 
