@@ -6,6 +6,8 @@ tag @a[tag=InGame] add Winner
 scoreboard players add @a[tag=InGame] Wins 1
 tag @a remove InGame
 
+effect clear @a
+
 scoreboard players set #game PlayersAlive 0
 # Reset state to lobby state
 scoreboard players set #game GameState 0

@@ -13,6 +13,8 @@ team join Spectator @a[tag=!InGame]
 # Increase timer
 execute if score #game Timer matches 20.. run scoreboard players add #game Sec_Timer 1
 execute if score #game Sec_Timer matches 60.. run scoreboard players add #game Min_Timer 1
+execute if score #game Sec_Timer matches 0..45 run scoreboard objectives setdisplay sidebar DisplayVariable
+execute if score #game Sec_Timer matches 45.. run scoreboard objectives setdisplay sidebar Kills
 execute if score #game Sec_Timer matches 60.. run scoreboard players set #game Sec_Timer 0
 
 # Check active players

@@ -12,7 +12,7 @@
 
 # Take care of leavers
 execute as @a[scores={Leaves=1..}] run tag @s remove InGame
-execute as @a[scores={Leaves=1..}] run scoreboard players reset * kills
+execute as @a[scores={Leaves=1..}] run scoreboard players reset * Kills
 execute as @a[scores={Leaves=1..}] if score #game GameState matches 0..1 run gamemode adventure @s
 execute as @a[scores={Leaves=1..}] run scoreboard players reset @s Leaves
 

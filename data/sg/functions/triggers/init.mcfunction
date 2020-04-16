@@ -11,7 +11,7 @@ gamerule spawnRadius 0
 gamerule doWeatherCycle false
 
 # Setup kill variable
-scoreboard objectives add kills playerKillCount "Player kills"
+scoreboard objectives add Kills playerKillCount "\u00A7a\u00A7l--Player Kills--"
 scoreboard objectives add Leaves minecraft.custom:minecraft.leave_game
 scoreboard objectives add Deaths deathCount
 scoreboard objectives add GameState dummy

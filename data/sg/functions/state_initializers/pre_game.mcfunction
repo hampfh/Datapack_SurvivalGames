@@ -1,5 +1,6 @@
-# Reset kills 
-scoreboard players reset * kills
+# Reset Kills 
+scoreboard players reset * Kills
+scoreboard players set @a Kills 0
 scoreboard players set #game PlayersAlive 0
 scoreboard players reset * Deaths
 
