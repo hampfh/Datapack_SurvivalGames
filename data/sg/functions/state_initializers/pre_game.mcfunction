@@ -8,6 +8,8 @@ scoreboard players reset * Deaths
 advancement revoke @a everything
 
 effect clear @a
+xp set @a 0 levels
+xp set @a 0 points
 
 # Give all active players the InGameTag
 tag @a add InGame
