@@ -2,6 +2,15 @@
 # Enable moderators to click on signs
 execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_GameStart
 
+# Run team options
+execute if score #game GameState matches 0..1 run function sg:options/options_team
+
+###################### Teams ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_Teams
+execute if score #game GameState matches 0..1 as @a[scores={Trig_Teams=1..}] run scoreboard players add #game Teams 1
+execute if score #game GameState matches 0..1 if score #game Teams matches 2.. run scoreboard players set #game Teams 0
+execute if score #game GameState matches 0..1 if score #game Teams matches 0 run team leave @a
+execute as @a[scores={Trig_Teams=1..}] run scoreboard players set @s Trig_Teams 0
 ###################### ChangeDiff ######################
 execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_ChangeDiff
 execute if score #game GameState matches 0..1 as @a[scores={Trig_ChangeDiff=1..}] run scoreboard players add #game Difficulty 1
@@ -49,6 +58,19 @@ execute if score #game GameState matches 0..1 if score #game FallDamage matches 
 execute if score #game GameState matches 0..1 as @a[scores={Trig_FallDamage=1..}] if score #game FallDamage matches 0 run gamerule fallDamage false
 execute if score #game GameState matches 0..1 as @a[scores={Trig_FallDamage=1..}] if score #game FallDamage matches 1 run gamerule fallDamage true
 execute as @a[scores={Trig_FallDamage=1..}] run scoreboard players set @s Trig_FallDamage 0
+###################### RandTeams ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_RandTeams
+execute if score #game GameState matches 0..1 as @a[scores={Trig_RandTeams=1..}] run scoreboard players add #game RandTeams 1
+execute if score #game GameState matches 0..1 if score #game RandTeams matches 2.. run scoreboard players set #game RandTeams 0
+execute if score #game GameState matches 0..1 as @a[scores={Trig_RandTeams=1..}] if score #game RandTeams matches 1.. run function sg:internal/teams/clear_triggers
+execute as @a[scores={Trig_RandTeams=1..}] run scoreboard players set @s Trig_RandTeams 0
+###################### DoInsomnia ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_DoInsomnia
+execute if score #game GameState matches 0..1 as @a[scores={Trig_DoInsomnia=1..}] run scoreboard players add #game DoInsomnia 1
+execute if score #game GameState matches 0..1 if score #game DoInsomnia matches 2.. run scoreboard players set #game DoInsomnia 0
+execute if score #game GameState matches 0..1 as @a[scores={Trig_DoInsomnia=1..}] if score #game DoInsomnia matches 0 run gamerule doInsomnia false
+execute if score #game GameState matches 0..1 as @a[scores={Trig_DoInsomnia=1..}] if score #game DoInsomnia matches 1 run gamerule doInsomnia true
+execute as @a[scores={Trig_DoInsomnia=1..}] run scoreboard players set @s Trig_DoInsomnia 0
 
 # Reset gamestart trigger
 execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set @s Trig_GameStart 0

@@ -1,0 +1,22 @@
+# Generated with script
+execute as @r[tag=InGame, team=TEAM_1] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_2] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_3] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_4] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_5] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_6] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_7] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_8] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_9] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_10] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_11] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_12] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_13] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_14] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_15] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_16] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_17] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_18] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_19] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_20] run scoreboard players add #game TeamsAlive 1
+execute as @r[tag=InGame, team=TEAM_21] run scoreboard players add #game TeamsAlive 1
