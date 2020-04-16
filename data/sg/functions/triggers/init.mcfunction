@@ -15,6 +15,7 @@ scoreboard objectives add kills playerKillCount "Player kills"
 scoreboard objectives add Leaves minecraft.custom:minecraft.leave_game
 scoreboard objectives add Deaths deathCount
 scoreboard objectives add GameState dummy
+scoreboard objectives add Wins dummy
 # Timers
 scoreboard objectives add Timer dummy
 scoreboard objectives add Sec_Timer dummy
@@ -36,7 +37,7 @@ scoreboard objectives add Trig_NewMap trigger
 
 scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Survival Games--"
 scoreboard objectives setdisplay sidebar DisplayVariable
-scoreboard objectives setdisplay list kills
+scoreboard objectives setdisplay list Wins
 
 weather clear
 

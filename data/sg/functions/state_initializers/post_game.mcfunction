@@ -3,6 +3,7 @@ tellraw @a ["",{"text":"The game took ","color":"dark_aqua"},{"score":{"name":"#
 
 # Add winner tag
 tag @a[tag=InGame] add Winner
+scoreboard players add @a[tag=InGame] Wins 1
 tag @a remove InGame
 
 scoreboard players set #game PlayersAlive 0
