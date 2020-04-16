@@ -36,7 +36,8 @@ worldborder set 1800 0
 execute at @e[type=minecraft:armor_stand, name=Anchor] run worldborder center ~ ~
 worldborder warning distance 200
 
-execute at @e[type=minecraft:armor_stand, name=Anchor] run spreadplayers ~ ~ 200 840 false @a[tag=InGame]
+execute at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 200 840 false @a[tag=InGame]
+execute at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 200 840 true @a[tag=InGame]
 
 # Setup sidebar
 scoreboard players reset * DisplayVariable

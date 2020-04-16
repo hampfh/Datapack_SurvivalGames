@@ -1,6 +1,8 @@
 # Game state
 
 gamemode spectator @a[scores={Deaths=1..}]
+# Show death message
+execute if score #game PlayersAlive matches 2.. as @a[scores={Deaths=1..}, tag=InGame] run tellraw @a ["",{"text":"There are now ","color":"dark_red"},{"score":{"name":"#game","objective":"PlayersAlive"},"bold":true,"color":"dark_red"},{"text":" players left in the match","color":"dark_red"}]
 tag @a[scores={Deaths=1..}, tag=InGame] remove InGame
 scoreboard players set @a[scores={Deaths=1..}] Deaths 0
 
@@ -10,9 +12,6 @@ execute as @a[tag=InGame] run scoreboard players add #game PlayersAlive 1
 # Check active teams
 execute if score #game Teams matches 1 run scoreboard players set #game TeamsAlive 0
 execute if score #game Teams matches 1 run function sg:internal/teams/update_teams_alive
-
-# Show death message
-execute if score #game PlayersAlive matches 2.. as @a[scores={Deaths=1..}, tag=InGame] run tellraw @a ["",{"text":"There are now ","color":"dark_red"},{"score":{"name":"#game","objective":"PlayersAlive"},"bold":true,"color":"dark_red"},{"text":" players left in the match","color":"dark_red"}]
 
 # Convert all non ingame players to spectators
 gamemode spectator @a[tag=!InGame]
