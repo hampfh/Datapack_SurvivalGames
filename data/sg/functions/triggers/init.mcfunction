@@ -1,4 +1,4 @@
-tellraw @a "Setting up survival games version 1.4"
+tellraw @a "Setting up survival games version 2.1"
 tellraw @a ["",{"text":"Datapack author: ","color":"dark_aqua"},{"text":"Hampfh","bold":true,"color":"dark_aqua"},{"text":"\n"},{"text":"Pack available at: ","color":"dark_aqua"},{"text":"www.github.com/hampfh/Datapack_SurvivalGames","italic":true,"color":"dark_aqua","clickEvent":{"action":"open_url","value":"https://www.github.com/hampfh/Datapack_SurvivalGames"},"hoverEvent":{"action":"show_text","value":["",{"text":"Open the github repository","color":"dark_aqua"}]}}]
 
 # Game rules
@@ -11,10 +11,11 @@ gamerule spawnRadius 0
 gamerule doWeatherCycle false
 
 # Setup variables
-scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Survival Games--"
+scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Hunger Games--"
 scoreboard objectives add Kills playerKillCount "\u00A7a\u00A7l--Player Kills--"
 scoreboard objectives add Leaves minecraft.custom:minecraft.leave_game
 scoreboard objectives add PlayersAlive dummy 
+scoreboard objectives add TeamsAlive dummy
 scoreboard objectives add Deaths deathCount
 scoreboard objectives add GameState dummy
 scoreboard objectives add Wins dummy
@@ -24,13 +25,17 @@ scoreboard objectives add Sec_Timer dummy
 scoreboard objectives add Min_Timer dummy
 
 # Settings
+scoreboard objectives add Teams dummy
 scoreboard objectives add Difficulty dummy 
 scoreboard objectives add NoCoords dummy
 scoreboard objectives add DeathMsg dummy
 scoreboard objectives add ShowPrgress dummy
 scoreboard objectives add UHCMode dummy
 scoreboard objectives add FallDamage dummy
+scoreboard objectives add RandTeams dummy
+scoreboard objectives add DoInsomnia dummy
 
+scoreboard objectives add Trig_Teams trigger
 scoreboard objectives add Trig_GameStart trigger
 scoreboard objectives add Trig_ChangeDiff trigger
 scoreboard objectives add Trig_NoCoords trigger
@@ -39,6 +44,8 @@ scoreboard objectives add Trig_ShowPrgress trigger
 scoreboard objectives add Trig_NewMap trigger
 scoreboard objectives add Trig_UHCMode trigger
 scoreboard objectives add Trig_FallDamage trigger
+scoreboard objectives add Trig_RandTeams trigger
+scoreboard objectives add Trig_DoInsomnia trigger
 
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list Wins
@@ -54,6 +61,7 @@ team modify INTERNAL_SIDEBAR color dark_purple
 team add Spectator
 team modify Spectator color gray
 
+scoreboard players set #game Teams 0
 scoreboard players set #game Difficulty 0
 scoreboard players set #game NoCoords 1
 scoreboard players set #game GameState 0
@@ -62,6 +70,8 @@ scoreboard players set #game DeathMsg 1
 scoreboard players set #game ShowPrgress 1
 scoreboard players set #game UHCMode 0
 scoreboard players set #game FallDamage 1
+scoreboard players set #game RandTeams 0
+scoreboard players set #game DoInsomnia 0
 
 execute at @e[type=minecraft:armor_stand, name=Anchor] run setworldspawn ~ 205 ~
 
@@ -69,8 +79,9 @@ execute at @e[type=minecraft:armor_stand, name=Anchor] run setworldspawn ~ 205 ~
 execute at @e[type=minecraft:armor_stand, name=Anchor] run tp @a ~ 205 ~
 
 function sg:internal/buildlobby 
+function sg:internal/teams/team_init
 
 # Reset worldborder
-worldborder set 25 0
+worldborder set 3000 0
 worldborder warning distance 0
 execute at @e[type=minecraft:armor_stand, name=Anchor] run worldborder center ~ ~

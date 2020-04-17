@@ -2,6 +2,7 @@
 scoreboard players reset * Kills
 scoreboard players set @a Kills 0
 scoreboard players set #game PlayersAlive 0
+scoreboard players set #game TeamsAlive 0
 scoreboard players reset * Deaths
 
 # Revoke advancements
@@ -13,6 +14,8 @@ xp set @a 0 points
 
 # Give all active players the InGameTag
 tag @a add InGame
+
+gamemode survival @a
 
 # Set time to day
 time set 0
@@ -33,17 +36,14 @@ worldborder set 1800 0
 execute at @e[type=minecraft:armor_stand, name=Anchor] run worldborder center ~ ~
 worldborder warning distance 200
 
-execute at @e[type=minecraft:armor_stand, name=Anchor] run spreadplayers ~ ~ 200 840 false @a[tag=InGame]
-
-# Set players alive count
-execute as @a[tag=InGame] run scoreboard players add #game PlayersAlive 1
-
-gamemode survival @a[tag=InGame]
+execute at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 200 840 false @a[tag=InGame]
+execute at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 200 840 true @a[tag=InGame]
 
 # Setup sidebar
 scoreboard players reset * DisplayVariable
 scoreboard objectives setdisplay sidebar DisplayVariable
 team join INTERNAL_SIDEBAR PlayersAlive:
+execute if score #game Teams matches 1 run team join INTERNAL_SIDEBAR TeamsAlive:
 team join INTERNAL_SIDEBAR Minutes:
 
 # Set shrinking value

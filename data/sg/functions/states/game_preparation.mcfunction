@@ -13,5 +13,8 @@ team join INTERNAL_SIDEBAR TimeLeft:
 # If "start game" sign is pressed again decrease time
 execute if score #game Sec_Timer matches ..59 as @a[scores={Trig_GameStart=1..}] if score #game Sec_Timer matches 11.. run scoreboard players remove #game Sec_Timer 5
 
+# Assign people to teams
+execute if score #game Teams matches 1 run function sg:internal/teams/randomly_select_players
+
 # Start game
 execute if score #game Sec_Timer matches ..0 run function sg:state_initializers/post_game_preparation

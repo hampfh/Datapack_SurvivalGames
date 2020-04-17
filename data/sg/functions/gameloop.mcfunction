@@ -2,4 +2,4 @@
 function sg:core
 
 # Manage options
-function sg:options
+function sg:options/options
