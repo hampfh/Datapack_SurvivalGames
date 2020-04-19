@@ -15,7 +15,6 @@ execute if score #game Teams matches 1 run function sg:internal/teams/update_tea
 
 # Convert all non ingame players to spectators
 gamemode spectator @a[tag=!InGame]
-team join Spectator @a[tag=!InGame]
 
 # Increase timer
 execute if score #game Timer matches 20.. run scoreboard players add #game Sec_Timer 1

@@ -58,8 +58,6 @@ summon armor_stand 0 400 0 {Invisible:1b,Invulnerable:1b,NoBasePlate:1b,NoGravit
 # Add teams
 team add INTERNAL_SIDEBAR
 team modify INTERNAL_SIDEBAR color dark_purple
-team add Spectator
-team modify Spectator color gray
 
 scoreboard players set #game Teams 0
 scoreboard players set #game Difficulty 0

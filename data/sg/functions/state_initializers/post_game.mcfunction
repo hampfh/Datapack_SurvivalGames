@@ -6,8 +6,9 @@ execute if score #game Teams matches 1 run function sg:internal/teams/team_win_m
 tellraw @a ["",{"text":"The game took ","color":"dark_aqua"},{"score":{"name":"#game","objective":"Min_Timer"},"bold":true,"color":"dark_aqua"},{"text":" minutes and ","color":"dark_aqua"},{"score":{"name":"#game","objective":"Sec_Timer"},"bold":true,"color":"dark_aqua"},{"text":" seconds","color":"dark_aqua"}]
 
 # Add winner tag
-tag @a[tag=InGame] add Winner
-scoreboard players add @a[tag=InGame] Wins 1
+execute if score #game Teams matches 0 run tag @a[tag=InGame] add Winner
+execute if score #game Teams matches 0 run scoreboard players add @a[tag=InGame] Wins 1
+execute if score #game Teams matches 1 run function sg:internal/teams/detect_team_win
 tag @a remove InGame
 
 scoreboard players set #game PlayersAlive 0
@@ -21,9 +22,8 @@ scoreboard objectives setdisplay sidebar
 # Cleaer items
 kill @e[type=minecraft:item]
 
-# Empty spectator team
+# Empty teams
 effect clear @a
-team empty Spectator
 team leave @a
 
 # Reset worldborder
