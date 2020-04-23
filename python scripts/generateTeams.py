@@ -24,7 +24,7 @@ def teamsAlive():
 
 def teamWinMessage():
     for i in range(21):
-        print("execute as @r[team=TEAM_{0}] run tellraw @a [\"\",{{\"text\":\"Team \",\"color\":\"dark_aqua\"}},{{\"text\":\"#{0}\",\"bold\":true,\"color\":\"gold\"}},{{\"text\":\" won the game\",\"color\":\"dark_aqua\"}}]".format(i + 1))
+        print("execute as @r[team=TEAM_{0},tag=InGame] run tellraw @a [\"\",{{\"text\":\"Team \",\"color\":\"dark_aqua\"}},{{\"text\":\"#{0}\",\"bold\":true,\"color\":\"gold\"}},{{\"text\":\" won the game\",\"color\":\"dark_aqua\"}}]".format(i + 1))
 
 def clearJoinTeamTrigger(teamIndex):
     print("scoreboard players reset @a Trig_TEAM_{0}".format(teamIndex))
@@ -43,6 +43,6 @@ def main():
     #    generateSigns(i + 1)
 
 
-main()
+teamWinMessage()
 
 input()
