@@ -8,14 +8,14 @@ scoreboard players reset * Deaths
 # Revoke advancements
 advancement revoke @a everything
 
-effect clear @a
-xp set @a 0 levels
-xp set @a 0 points
-
 # Give all active players the InGameTag
 tag @a add InGame
 
 gamemode survival @a
+effect clear @a
+xp set @a 0 levels
+xp set @a 0 points
+function sg:internal/clear_ender_chests
 
 # Set time to day
 time set 0
