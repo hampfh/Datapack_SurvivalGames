@@ -18,9 +18,6 @@ execute as @a[scores={Leaves=1..}] run effect clear @s
 execute as @a[scores={Leaves=1..}] run team leave @s
 execute as @a[scores={Leaves=1..}] if score #game GameState matches 0..1 run gamemode adventure @s
 execute as @a[scores={Leaves=1..}] run scoreboard players reset @s Leaves
-# Welcome new members
-execute as @a[tag=!HasLoggedIn] run tellraw @a ["",{"selector":"@s","bold":true,"color":"gold"},{"text":" entered the server for the first time, welcome!","color":"dark_aqua"}]
-execute as @a[tag=!HasLoggedIn] run tag @s add HasLoggedIn
 
 # Increase tick timer
 execute if score #game Timer matches ..20 run scoreboard players add #game Timer 1

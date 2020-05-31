@@ -1,5 +1,11 @@
-tellraw @a "Setting up survival games version 2.3"
+title @a clear
+tellraw @a [{ "text":"Setting up survival games version 2.3", "color": "dark_aqua" }]
 tellraw @a ["",{"text":"Datapack author: ","color":"dark_aqua"},{"text":"Hampfh","bold":true,"color":"dark_aqua"},{"text":"\n"},{"text":"Pack available at: ","color":"dark_aqua"},{"text":"www.github.com/hampfh/Datapack_SurvivalGames","italic":true,"color":"dark_aqua","clickEvent":{"action":"open_url","value":"https://www.github.com/hampfh/Datapack_SurvivalGames"},"hoverEvent":{"action":"show_text","value":["",{"text":"Open the github repository","color":"dark_aqua"}]}}]
+
+# Remove force-loader of chunk 0 0
+forceload remove all
+tag @s add Moderator
+tellraw @s [{ "text":"You are now a moderator", "color": "gray", "italic":true }]
 
 # Game rules
 gamerule commandBlockOutput false
@@ -9,6 +15,7 @@ gamerule doTileDrops false
 gamerule spectatorsGenerateChunks false
 gamerule spawnRadius 0
 gamerule doWeatherCycle false
+gamerule logAdminCommands false
 
 # Setup variables
 scoreboard objectives add DisplayVariable dummy "\u00A7a\u00A7l--Hunger Games--"
@@ -70,6 +77,7 @@ scoreboard players set #game UHCMode 0
 scoreboard players set #game FallDamage 1
 scoreboard players set #game RandTeams 0
 scoreboard players set #game DoInsomnia 0
+scoreboard players set #game PackInstantiated 2
 
 execute at @e[type=minecraft:armor_stand, name=Anchor] run setworldspawn ~ 205 ~
 
