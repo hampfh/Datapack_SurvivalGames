@@ -26,6 +26,7 @@ scoreboard objectives add TeamsAlive dummy
 scoreboard objectives add Deaths deathCount
 scoreboard objectives add GameState dummy
 scoreboard objectives add Wins dummy
+scoreboard objectives add BorderDistance dummy
 # Timers
 scoreboard objectives add Timer dummy
 scoreboard objectives add Sec_Timer dummy
@@ -78,6 +79,11 @@ scoreboard players set #game FallDamage 1
 scoreboard players set #game RandTeams 0
 scoreboard players set #game DoInsomnia 0
 scoreboard players set #game PackInstantiated 2
+
+# Set up borderDistance
+scoreboard players set #game BorderDistance 0
+# Divide border by 2 to get distance-to-center (radius)
+scoreboard players set #divisor BorderDistance 2
 
 execute at @e[type=minecraft:armor_stand, name=Anchor] run setworldspawn ~ 205 ~
 
