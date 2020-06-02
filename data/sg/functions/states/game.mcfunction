@@ -27,6 +27,7 @@ execute if score #game Sec_Timer matches 60.. run scoreboard players set #game S
 scoreboard players operation PlayersAlive: DisplayVariable = #game PlayersAlive
 execute if score #game Teams matches 1 run scoreboard players operation TeamsAlive: DisplayVariable = #game TeamsAlive
 scoreboard players operation Minutes: DisplayVariable = #game Min_Timer
+scoreboard players operation Border: DisplayVariable = #game BorderDistance
 
 # Detect game end
 execute if score #game Teams matches 0 if score #game PlayersAlive matches ..1 run function sg:state_initializers/post_game

@@ -43,6 +43,7 @@ execute at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matc
 scoreboard players reset * DisplayVariable
 scoreboard objectives setdisplay sidebar DisplayVariable
 team join INTERNAL_SIDEBAR PlayersAlive:
+team join INTERNAL_SIDEBAR Border:
 execute if score #game Teams matches 1 run team join INTERNAL_SIDEBAR TeamsAlive:
 team join INTERNAL_SIDEBAR Minutes:
 

@@ -19,6 +19,10 @@ execute as @a[scores={Leaves=1..}] run team leave @s
 execute as @a[scores={Leaves=1..}] if score #game GameState matches 0..1 run gamemode adventure @s
 execute as @a[scores={Leaves=1..}] run scoreboard players reset @s Leaves
 
+# Update worldborder Distance
+execute store result score #game BorderDistance run worldborder get
+scoreboard players operation #game BorderDistance /= #divisor BorderDistance
+
 # Increase tick timer
 execute if score #game Timer matches ..20 run scoreboard players add #game Timer 1
 
