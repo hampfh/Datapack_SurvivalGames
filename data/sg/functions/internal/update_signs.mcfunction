@@ -19,4 +19,4 @@ execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 if 
 # Map size sign
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 run data merge block ~-1 ~-1 ~ {"Text3":'[{"score":{"name":"#game", "objective":"MapSize"}, "color": "dark_purple"},{"text":" blocks", "color":"dark_purple"}]'}
 # GameMaxTime sign
-execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 run data merge block ~1 ~-1 ~ {"Text3":'[{"score":{"name":"#game", "objective":"GameMaxTime"}, "color": "dark_purple"},{"text":" min", "color":"dark_purple"}]'}
+execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 run data merge block ~-2 ~-1 ~ {"Text3":'[{"score":{"name":"#game", "objective":"GameMaxTime"}, "color": "dark_purple"},{"text":" min", "color":"dark_purple"}]'}

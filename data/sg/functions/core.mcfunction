@@ -10,6 +10,7 @@
 # Winner - last player that won the game
 # InGame - determinds if a player is in game or out of game
 # HasLoggedIn - is given to all users after they login for the first time
+# Movable - player is allowed to leave lobby (without being teleported back)
 
 # Take care of leavers
 execute as @a[scores={Leaves=1..}] run tag @s remove InGame
