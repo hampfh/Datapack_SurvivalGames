@@ -32,23 +32,19 @@ gamerule doTileDrops true
 tag @a[tag=Winner] remove Winner
 
 # Reset border
-worldborder set 1800 0
 execute at @e[type=minecraft:armor_stand, name=Anchor] run worldborder center ~ ~
-worldborder warning distance 200
-
-execute at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 200 840 false @a[tag=InGame]
-execute at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 200 840 true @a[tag=InGame]
+function sg:internal/set_map_size
+function sg:internal/spread_players
 
 # Setup sidebar
 scoreboard players reset * DisplayVariable
 scoreboard objectives setdisplay sidebar DisplayVariable
+execute if score #game Teams matches 1 run team join INTERNAL_SIDEBAR TeamsAlive:
 team join INTERNAL_SIDEBAR PlayersAlive:
 team join INTERNAL_SIDEBAR Border:
-execute if score #game Teams matches 1 run team join INTERNAL_SIDEBAR TeamsAlive:
 team join INTERNAL_SIDEBAR Minutes:
 
-# Set shrinking value
-worldborder set 20 1800
+function sg:internal/start_border
 
 # Give all players invisibility in the start
 effect give @a[tag=InGame] minecraft:invisibility 70 1 true

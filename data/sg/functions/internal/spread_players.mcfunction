@@ -1,0 +1,16 @@
+# Depending on map size players will be spread differently
+
+execute if score #game MapSize matches 50 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 5 25 false @a[tag=InGame]
+execute if score #game MapSize matches 50 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 5 25 true @a[tag=InGame]
+execute if score #game MapSize matches 100 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 10 50 false @a[tag=InGame]
+execute if score #game MapSize matches 100 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 10 50 true @a[tag=InGame]
+execute if score #game MapSize matches 200 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 40 100 false @a[tag=InGame]
+execute if score #game MapSize matches 200 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 40 100 true @a[tag=InGame]
+execute if score #game MapSize matches 400 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 80 200 false @a[tag=InGame]
+execute if score #game MapSize matches 400 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 80 200 true @a[tag=InGame]
+execute if score #game MapSize matches 800 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 160 400 false @a[tag=InGame]
+execute if score #game MapSize matches 800 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 160 400 true @a[tag=InGame]
+execute if score #game MapSize matches 1600 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 200 800 false @a[tag=InGame]
+execute if score #game MapSize matches 1600 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 200 800 true @a[tag=InGame]
+execute if score #game MapSize matches 3200 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 0 run spreadplayers ~ ~ 200 1600 false @a[tag=InGame]
+execute if score #game MapSize matches 3200 at @e[type=minecraft:armor_stand, name=Anchor] if score #game Teams matches 1 run spreadplayers ~ ~ 200 1600 true @a[tag=InGame]

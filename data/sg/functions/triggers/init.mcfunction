@@ -42,6 +42,8 @@ scoreboard objectives add UHCMode dummy
 scoreboard objectives add FallDamage dummy
 scoreboard objectives add RandTeams dummy
 scoreboard objectives add DoInsomnia dummy
+scoreboard objectives add MapSize dummy
+scoreboard objectives add GameMaxTime dummy
 
 scoreboard objectives add Trig_Teams trigger
 scoreboard objectives add Trig_GameStart trigger
@@ -54,6 +56,8 @@ scoreboard objectives add Trig_UHCMode trigger
 scoreboard objectives add Trig_FallDamage trigger
 scoreboard objectives add Trig_RandTeams trigger
 scoreboard objectives add Trig_DoInsomnia trigger
+scoreboard objectives add Trig_MapSize trigger
+scoreboard objectives add Trig_GameMaxTime trigger
 
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list Wins
@@ -79,6 +83,13 @@ scoreboard players set #game FallDamage 1
 scoreboard players set #game RandTeams 0
 scoreboard players set #game DoInsomnia 0
 scoreboard players set #game PackInstantiated 2
+
+# Set default map size
+scoreboard players set #game MapSize 800
+scoreboard players set #divisor MapSize 2
+# Set default game max time (30 minutes)
+scoreboard players set #game GameMaxTime 30
+scoreboard players set #incrementer GameMaxTime 15
 
 # Set up borderDistance
 scoreboard players set #game BorderDistance 0

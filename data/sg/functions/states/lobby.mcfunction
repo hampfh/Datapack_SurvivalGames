@@ -20,3 +20,6 @@ execute at @e[type=minecraft:armor_stand, name=Anchor] positioned ~ 205 ~ run tp
 
 # Check for game start command
 execute as @a[scores={Trig_GameStart=1..}] run function sg:state_initializers/pre_game_preparation
+
+# Update signs 
+function sg:internal/update_signs

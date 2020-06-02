@@ -71,6 +71,16 @@ execute if score #game GameState matches 0..1 if score #game DoInsomnia matches 
 execute if score #game GameState matches 0..1 as @a[scores={Trig_DoInsomnia=1..}] if score #game DoInsomnia matches 0 run gamerule doInsomnia false
 execute if score #game GameState matches 0..1 as @a[scores={Trig_DoInsomnia=1..}] if score #game DoInsomnia matches 1 run gamerule doInsomnia true
 execute as @a[scores={Trig_DoInsomnia=1..}] run scoreboard players set @s Trig_DoInsomnia 0
+###################### MapSize ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_MapSize
+execute if score #game GameState matches 0..1 as @a[scores={Trig_MapSize=1..}] run scoreboard players operation #game MapSize *= #divisor MapSize
+execute if score #game GameState matches 0..1 if score #game MapSize matches 3201.. run scoreboard players set #game MapSize 50
+execute as @a[scores={Trig_MapSize=1..}] run scoreboard players set @s Trig_MapSize 0
+###################### GameMaxTime ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_GameMaxTime
+execute if score #game GameState matches 0..1 as @a[scores={Trig_GameMaxTime=1..}] run scoreboard players operation #game GameMaxTime += #incrementer GameMaxTime
+execute if score #game GameState matches 0..1 if score #game GameMaxTime matches 121.. run scoreboard players set #game GameMaxTime 15
+execute as @a[scores={Trig_GameMaxTime=1..}] run scoreboard players set @s Trig_GameMaxTime 0
 
 # Reset gamestart trigger
 execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set @s Trig_GameStart 0
