@@ -3,7 +3,7 @@
 # State 0 - lobby state
 # State 1 - prepare game state
 # State 2 - game state
-# State 3 - move state
+# State 5 - move state
 
 # Tag definition
 # Moderator - access to executing signs
@@ -31,7 +31,7 @@ execute if score #game Timer matches ..20 run scoreboard players add #game Timer
 execute if score #game GameState matches 0 run function sg:states/lobby 
 execute if score #game GameState matches 1 run function sg:states/game_preparation
 execute if score #game GameState matches 2 run function sg:states/game
-execute if score #game GameState matches 3 run function sg:states/move
+execute if score #game GameState matches 5 run function sg:states/move
 
 # Reset tick timer
 execute if score #game Timer matches 20.. run scoreboard players set #game Timer 0

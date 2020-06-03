@@ -6,7 +6,7 @@ function sg:internal/demolishlobby
 # Disable world border
 worldborder set 30000
 
-scoreboard players set #game GameState 3
+scoreboard players set #game GameState 5
 scoreboard players set #game Sec_Timer 0
 
 tag @r add Movable
