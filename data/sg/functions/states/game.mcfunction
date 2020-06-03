@@ -34,6 +34,9 @@ scoreboard players operation Border: DisplayVariable = #game BorderDistance
 # Handle shield clearing if AllowShield is zeroed
 execute if score #game AllowShield matches 0 run function sg:internal/clear_shields
 
+# Detect end game & start end game
+execute if score #game Min_Timer >= #game GameMaxTime if score #game GameState matches 2 run function sg:state_initializers/pre_end_game
+
 # Detect game end
 execute if score #game Teams matches 0 if score #game PlayersAlive matches ..1 run function sg:state_initializers/post_game
 execute if score #game Teams matches 1 if score #game TeamsAlive matches ..1 run function sg:state_initializers/post_game

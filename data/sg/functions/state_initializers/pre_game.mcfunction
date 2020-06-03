@@ -50,5 +50,6 @@ function sg:internal/start_border
 effect give @a[tag=InGame] minecraft:invisibility 70 1 true
 
 # Show title
+title @a[tag=InGame] times 10 100 10
 title @a[tag=InGame] subtitle {"text":"Last man standing wins!","color":"dark_aqua"}
 title @a[tag=InGame] title {"text":"Fight!","bold":true,"color":"dark_aqua"}

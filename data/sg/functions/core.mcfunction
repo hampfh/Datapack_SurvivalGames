@@ -3,6 +3,8 @@
 # State 0 - lobby state
 # State 1 - prepare game state
 # State 2 - game state
+# State 3 - end game
+# State 4 - sudden death
 # State 5 - move state
 
 # Tag definition
@@ -30,7 +32,9 @@ execute if score #game Timer matches ..20 run scoreboard players add #game Timer
 # Run lobby states
 execute if score #game GameState matches 0 run function sg:states/lobby 
 execute if score #game GameState matches 1 run function sg:states/game_preparation
-execute if score #game GameState matches 2 run function sg:states/game
+execute if score #game GameState matches 2..4 run function sg:states/game
+execute if score #game GameState matches 3 run function sg:states/end_game
+execute if score #game GameState matches 4 run function sg:states/sudden_death
 execute if score #game GameState matches 5 run function sg:states/move
 
 # Reset tick timer

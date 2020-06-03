@@ -11,6 +11,9 @@ execute if score #game Teams matches 0 run scoreboard players add @a[tag=InGame]
 execute if score #game Teams matches 1 run function sg:internal/teams/detect_team_win
 tag @a remove InGame
 
+# Call post sudden death
+execute if score #game GameState matches 4 run function sg:state_initializers/post_sudden_death
+
 scoreboard players set #game PlayersAlive 0
 scoreboard players set #game TeamsAlive 0
 # Reset state to lobby state
