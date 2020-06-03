@@ -44,6 +44,7 @@ scoreboard objectives add RandTeams dummy
 scoreboard objectives add DoInsomnia dummy
 scoreboard objectives add MapSize dummy
 scoreboard objectives add GameMaxTime dummy
+scoreboard objectives add AllowShields dummy
 
 scoreboard objectives add Trig_Teams trigger
 scoreboard objectives add Trig_GameStart trigger
@@ -58,6 +59,7 @@ scoreboard objectives add Trig_RandTeams trigger
 scoreboard objectives add Trig_DoInsomnia trigger
 scoreboard objectives add Trig_MapSize trigger
 scoreboard objectives add Trig_GameMaxTime trigger
+scoreboard objectives add Trig_AllowShields trigger
 
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list Wins
@@ -82,6 +84,7 @@ scoreboard players set #game UHCMode 0
 scoreboard players set #game FallDamage 1
 scoreboard players set #game RandTeams 0
 scoreboard players set #game DoInsomnia 0
+scoreboard players set #game AllowShields 0
 scoreboard players set #game PackInstantiated 2
 
 # Set default map size
