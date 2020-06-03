@@ -10,9 +10,6 @@ Simply install the datapack by dragging it into the "datapacks" folder in your w
 
 You're good to go, good luck in the games
 
-### Specifications
-Shield crafting recipes are disabled 
-
 ### Gallery
 ![](https://i.ibb.co/1nk67hh/2020-05-31-18-02-34.png)
 ![](https://i.ibb.co/6P0HgPQ/2020-05-31-18-02-52.png)
