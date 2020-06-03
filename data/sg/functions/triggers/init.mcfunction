@@ -60,6 +60,7 @@ scoreboard objectives add Trig_DoInsomnia trigger
 scoreboard objectives add Trig_MapSize trigger
 scoreboard objectives add Trig_GameMaxTime trigger
 scoreboard objectives add Trig_AllowShield trigger
+scoreboard objectives add Trig_PreloadMap trigger
 
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list Wins
