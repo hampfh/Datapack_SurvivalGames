@@ -16,6 +16,8 @@ execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 if 
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 if score #game UHCMode matches 1 run data merge block ~1 ~0 ~ {Text3:'{"text":"[Enabled]","color":"green"}'}
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 if score #game DoInsomnia matches 0 run data merge block ~2 ~0 ~ {Text3:'{"text":"[Disabled]","color":"red"}'}
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 if score #game DoInsomnia matches 1 run data merge block ~2 ~0 ~ {Text3:'{"text":"[Enabled]","color":"green"}'}
+execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 if score #game AllowShield matches 0 run data merge block ~2 ~-1 ~ {Text3:'{"text":"[Disabled]","color":"red"}'}
+execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 if score #game AllowShield matches 1 run data merge block ~2 ~-1 ~ {Text3:'{"text":"[Enabled]","color":"green"}'}
 # Map size sign
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 run data merge block ~-1 ~-1 ~ {"Text3":'[{"score":{"name":"#game", "objective":"MapSize"}, "color": "dark_purple"},{"text":" blocks", "color":"dark_purple"}]'}
 # GameMaxTime sign

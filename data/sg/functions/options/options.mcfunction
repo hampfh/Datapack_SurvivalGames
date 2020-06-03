@@ -81,6 +81,11 @@ execute if score #game GameState matches 0..1 run scoreboard players enable @a[t
 execute if score #game GameState matches 0..1 as @a[scores={Trig_GameMaxTime=1..}] run scoreboard players operation #game GameMaxTime += #incrementer GameMaxTime
 execute if score #game GameState matches 0..1 if score #game GameMaxTime matches 121.. run scoreboard players set #game GameMaxTime 15
 execute as @a[scores={Trig_GameMaxTime=1..}] run scoreboard players set @s Trig_GameMaxTime 0
+###################### ToggleShields ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_AllowShield
+execute if score #game GameState matches 0..1 as @a[scores={Trig_AllowShield=1..}] run scoreboard players add #game AllowShield 1
+execute if score #game GameState matches 0..1 if score #game AllowShield matches 2.. run scoreboard players set #game AllowShield 0
+execute as @a[scores={Trig_AllowShield=1..}] run scoreboard players set @s Trig_AllowShield 0
 
 # Reset gamestart trigger
 execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set @s Trig_GameStart 0
