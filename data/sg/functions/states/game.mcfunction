@@ -29,6 +29,9 @@ execute if score #game Teams matches 1 run scoreboard players operation TeamsAli
 scoreboard players operation Minutes: DisplayVariable = #game Min_Timer
 scoreboard players operation Border: DisplayVariable = #game BorderDistance
 
+# Handle shield clearing if AllowShields is zeroed
+execute if score #game AllowShields matches 0 run function sg:internal/clear_shields
+
 # Detect game end
 execute if score #game Teams matches 0 if score #game PlayersAlive matches ..1 run function sg:state_initializers/post_game
 execute if score #game Teams matches 1 if score #game TeamsAlive matches ..1 run function sg:state_initializers/post_game
