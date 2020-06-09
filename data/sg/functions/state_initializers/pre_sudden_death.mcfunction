@@ -10,7 +10,7 @@ worldborder warning distance 0
 # Create arena
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ 255 ~ run worldborder set 20 0
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ 255 ~ run worldborder center ~ ~
-execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ 255 ~ run fill ~9 ~-10 ~9 ~-10 ~-10 ~-10 minecraft:barrier
+execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ 255 ~ run fill ~15 ~-10 ~15 ~-15 ~-10 ~-15 minecraft:barrier
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ 255 ~ run fill ~9 ~-11 ~9 ~-10 ~-11 ~-10 minecraft:grass_block
 
 # Give effects to players
