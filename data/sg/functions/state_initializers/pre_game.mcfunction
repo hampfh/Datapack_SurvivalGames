@@ -53,3 +53,6 @@ effect give @a[tag=InGame] minecraft:invisibility 70 1 true
 title @a[tag=InGame] times 10 100 10
 title @a[tag=InGame] subtitle {"text":"Last man standing wins!","color":"dark_aqua"}
 title @a[tag=InGame] title {"text":"Fight!","bold":true,"color":"dark_aqua"}
+
+# Spread loot crates if they are enabled
+execute if score #game LootChests matches 1.. function sg:internal/loot_chests/spawn

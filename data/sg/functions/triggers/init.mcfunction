@@ -45,6 +45,7 @@ scoreboard objectives add DoInsomnia dummy
 scoreboard objectives add MapSize dummy
 scoreboard objectives add GameMaxTime dummy
 scoreboard objectives add AllowShield dummy
+scoreboard objectives add LootChests dummy
 
 scoreboard objectives add Trig_Teams trigger
 scoreboard objectives add Trig_GameStart trigger

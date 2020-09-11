@@ -33,6 +33,9 @@ team leave @a
 worldborder set 5000 0
 worldborder warning distance 0
 
+# Remove forceloaders after match
+forceload remove all
+
 # Clear sidebar
 scoreboard players reset * DisplayVariable
 
