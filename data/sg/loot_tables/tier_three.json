@@ -1,0 +1,130 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cooked_beef",
+					"weight": 3,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 15,
+								"max": 32
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:golden_carrot",
+					"weight": 0.5,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 7,
+								"max": 15
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:trident",
+					"weight": 0.25,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"enchantments": [
+								"minecraft:channeling",
+								"minecraft:riptide",
+								"minecraft:unbreaking"
+							],
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_sword",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"enchantments": [
+								"minecraft:knockback",
+								"minecraft:unbreaking"
+							],
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_pickaxe",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"enchantments": [
+								"minecraft:efficiency",
+								"minecraft:unbreaking"
+							],
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:totem_of_undying",
+					"weight": 1
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:random_chance",
+					"chance": 0.25
+				}
+			]
+		}
+	]
+}
