@@ -55,4 +55,4 @@ title @a[tag=InGame] subtitle {"text":"Last man standing wins!","color":"dark_aq
 title @a[tag=InGame] title {"text":"Fight!","bold":true,"color":"dark_aqua"}
 
 # Spread loot crates if they are enabled
-execute if score #game LootChests matches 1.. function sg:internal/loot_chests/spawn
+execute if score #game LootChests matches 1.. run function sg:internal/loot_chests/spawn
