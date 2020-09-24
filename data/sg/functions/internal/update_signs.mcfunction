@@ -22,3 +22,6 @@ execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 if 
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 run data merge block ~-1 ~-1 ~ {"Text3":'[{"score":{"name":"#game", "objective":"MapSize"}, "color": "dark_purple"},{"text":" blocks", "color":"dark_purple"}]'}
 # GameMaxTime sign
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 run data merge block ~-2 ~-1 ~ {"Text3":'[{"score":{"name":"#game", "objective":"GameMaxTime"}, "color": "dark_purple"},{"text":" min", "color":"dark_purple"}]'}
+# LootChests sign
+execute if score #game LootChests matches 0 at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 run data merge block ~3 ~-1 ~ {Text3:'{"text":"[Disabled]","color":"red"}'}
+execute if score #game LootChests matches 1.. at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ ~-196 ~-7 run data merge block ~3 ~-1 ~ {Text3:'[{"text":"Tier ", "color":"dark_purple"},{"score":{"name":"#game", "objective":"LootChests"}, "color": "dark_purple"}]'}

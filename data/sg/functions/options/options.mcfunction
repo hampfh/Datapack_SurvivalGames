@@ -90,6 +90,11 @@ execute as @a[scores={Trig_AllowShield=1..}] run scoreboard players set @s Trig_
 execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_PreloadMap
 execute if score #game GameState matches 0 as @a[scores={Trig_PreloadMap=1..}] run function sg:triggers/preload_area
 execute as @a[scores={Trig_PreloadMap=1..}] run scoreboard players set @s Trig_PreloadMap 0
+###################### LootChests ######################
+execute if score #game GameState matches 0..1 run scoreboard players enable @a[tag=Moderator] Trig_LootChests
+execute if score #game GameState matches 0..1 as @a[scores={Trig_LootChests=1..}] run scoreboard players add #game LootChests 1
+execute if score #game GameState matches 0..1 if score #game LootChests matches 4.. run scoreboard players set #game LootChests 0
+execute as @a[scores={Trig_LootChests=1..}] run scoreboard players set @s Trig_LootChests 0
 
 # Reset gamestart trigger
 execute as @a[scores={Trig_GameStart=1..}] run scoreboard players set @s Trig_GameStart 0

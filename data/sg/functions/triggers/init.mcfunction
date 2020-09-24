@@ -62,6 +62,7 @@ scoreboard objectives add Trig_MapSize trigger
 scoreboard objectives add Trig_GameMaxTime trigger
 scoreboard objectives add Trig_AllowShield trigger
 scoreboard objectives add Trig_PreloadMap trigger
+scoreboard objectives add Trig_LootChests trigger
 
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list Wins
@@ -88,6 +89,7 @@ scoreboard players set #game RandTeams 0
 scoreboard players set #game DoInsomnia 0
 scoreboard players set #game AllowShield 0
 scoreboard players set #game PackInstantiated 2
+scoreboard players set #game LootChests 0
 
 # Set default map size
 scoreboard players set #game MapSize 800
