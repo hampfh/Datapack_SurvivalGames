@@ -10,6 +10,3 @@ function sg:internal/blip_players
 
 # Change gamestate
 scoreboard players set #game GameState 3
-
-# Remove loot crates in end game
-execute if score #game LootChests matches 1.. run function sg:internal/loot_chests/remove
