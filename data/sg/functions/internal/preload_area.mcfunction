@@ -1,3 +1,5 @@
+# This will start a scheduler and iterate trough until count reaches 10
+
 # Teleport around all players
 function sg:internal/spread_players
 scoreboard players add #game Count 1

@@ -47,6 +47,7 @@ scoreboard objectives add GameMaxTime dummy
 scoreboard objectives add AllowShield dummy
 scoreboard objectives add LootChests dummy
 
+# Triggers
 scoreboard objectives add Trig_Teams trigger
 scoreboard objectives add Trig_GameStart trigger
 scoreboard objectives add Trig_ChangeDiff trigger
@@ -63,6 +64,7 @@ scoreboard objectives add Trig_GameMaxTime trigger
 scoreboard objectives add Trig_AllowShield trigger
 scoreboard objectives add Trig_PreloadMap trigger
 scoreboard objectives add Trig_LootChests trigger
+scoreboard objectives add Trig_Preload trigger
 
 scoreboard objectives setdisplay sidebar DisplayVariable
 scoreboard objectives setdisplay list Wins
