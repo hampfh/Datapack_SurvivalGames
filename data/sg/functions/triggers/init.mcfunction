@@ -1,5 +1,5 @@
 title @a clear
-tellraw @a [{ "text":"Setting up survival games version 3.1", "color": "dark_aqua" }]
+tellraw @a [{ "text":"Setting up survival games version 3.2", "color": "dark_aqua" }]
 tellraw @a ["",{"text":"Datapack author: ","color":"dark_aqua"},{"text":"Hampfh","bold":true,"color":"dark_aqua"},{"text":"\n"},{"text":"Pack available at: ","color":"dark_aqua"},{"text":"www.github.com/hampfh/Datapack_SurvivalGames","italic":true,"color":"dark_aqua","clickEvent":{"action":"open_url","value":"https://www.github.com/hampfh/Datapack_SurvivalGames"},"hoverEvent":{"action":"show_text","value":["",{"text":"Open the github repository","color":"dark_aqua"}]}}]
 
 # Remove force-loader of chunk 0 0
