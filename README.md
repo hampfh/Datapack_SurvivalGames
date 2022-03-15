@@ -1,7 +1,7 @@
 # Survival Games datapack
 <p align="center">
 <a>
-<img src="https://img.shields.io/badge/minecraft version-1.16+-%2300bcd4"></a>
+<img src="https://img.shields.io/badge/minecraft version-1.18.2+-%2300bcd4"></a>
 <a>
 <img src=https://img.shields.io/static/v1?label=Vanilla&message=Compatible&color=#009688></a>
 </p>
