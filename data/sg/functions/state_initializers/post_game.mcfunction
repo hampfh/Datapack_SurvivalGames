@@ -3,7 +3,7 @@ execute if score #game Teams matches 0 run tellraw @a ["",{"selector":"@a[tag=In
 execute if score #game Teams matches 1 run function sg:internal/teams/team_win_message
 
 # Display game time
-tellraw @a ["",{"text":"The game took ","color":"dark_aqua"},{"score":{"name":"#game","objective":"Min_Timer"},"bold":true,"color":"dark_aqua"},{"text":" minutes and ","color":"dark_aqua"},{"score":{"name":"#game","objective":"Sec_Timer"},"bold":true,"color":"dark_aqua"},{"text":" seconds","color":"dark_aqua"}]
+tellraw @a ["",{"text":"The game lasted for ","color":"dark_aqua"},{"score":{"name":"#game","objective":"Min_Timer"},"bold":true,"color":"dark_aqua"},{"text":" minutes and ","color":"dark_aqua"},{"score":{"name":"#game","objective":"Sec_Timer"},"bold":true,"color":"dark_aqua"},{"text":" seconds","color":"dark_aqua"}]
 
 # Add winner tag
 execute if score #game Teams matches 0 run tag @a[tag=InGame] add Winner
