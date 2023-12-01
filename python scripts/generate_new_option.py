@@ -1,21 +1,15 @@
 def main():
     optionName = input("Option name: ")
-    stateSelector = input("Selector for active states: ")
+    stateSelector = "0..1"#input("Selector for active states: ")
     gamerule = input("Gamerule: ")
     signText = input("Pretty option name: ")
     defaultActive = input("Active on default (y/n): ")
-    if defaultActive not in ("y", "n"):
-        print("Wrong value only y or n accepted")
-        return
     if len(optionName) > 11:
         print("Name too long")
         return
 
     # Option sign
-    if (defaultActive == "y"):
-        print("/give @p minecraft:oak_sign{{BlockEntityTag:{{Text1:\'{{\"text\":\"\",\"clickEvent\":{{\"action\":\"run_command\",\"value\":\"/trigger Trig_{0} add 1\"}}}}\',Text2:\'{{\"color\":\"dark_aqua\",\"text\":\"{1}\",\"clickEvent\":{{\"action\":\"run_command\",\"value\":\"/execute as @p[scores={{Trig_{0}=1..}}] if score #game {0} matches 0 run data merge block ~ ~ ~ {{Text3:\\\'{{\\\\\"color\\\\\":\\\\\"green\\\\\", \\\\\"text\\\\\":\\\\\"[Enabled]\\\\\"}}\\\'}}\"}}}}\',Text3:\'{{\"color\":\"green\",\"text\":\"[Enabled]\"}}\',Text4:\'{{\"text\":\"\",\"clickEvent\":{{\"action\":\"run_command\",\"value\":\"/execute as @p[scores={{Trig_{0}=1..}}] if score #game {0} matches 1 run data merge block ~ ~ ~ {{Text3:\\\'{{\\\\\"color\\\\\":\\\\\"red\\\\\",\\\\\"text\\\\\":\\\\\"[Disabled]\\\\\"}}\\\'}}\"}}}}\'}},display:{{Name:\'{{\"text\":\"Custom Sign\"}}\'}}}}".format(optionName, signText))
-    else:
-        print("/give @p minecraft:oak_sign{{BlockEntityTag:{{Text1:\'{{\"text\":\"\",\"clickEvent\":{{\"action\":\"run_command\",\"value\":\"/trigger Trig_{0} add 1\"}}}}\',Text2:\'{{\"color\":\"dark_aqua\",\"text\":\"{1}\",\"clickEvent\":{{\"action\":\"run_command\",\"value\":\"/execute as @p[scores={{Trig_{0}=1..}}] if score #game {0} matches 0 run data merge block ~ ~ ~ {{Text3:\\\'{{\\\\\"color\\\\\":\\\\\"green\\\\\", \\\\\"text\\\\\":\\\\\"[Enabled]\\\\\"}}\\\'}}\"}}}}\',Text3:\'{{\"color\":\"red\",\"text\":\"[Disabled]\"}}\',Text4:\'{{\"text\":\"\",\"clickEvent\":{{\"action\":\"run_command\",\"value\":\"/execute as @p[scores={{Trig_{0}=1..}}] if score #game {0} matches 1 run data merge block ~ ~ ~ {{Text3:\\\'{{\\\\\"color\\\\\":\\\\\"red\\\\\",\\\\\"text\\\\\":\\\\\"[Disabled]\\\\\"}}\\\'}}\"}}}}\'}},display:{{Name:\'{{\"text\":\"Custom Sign\"}}\'}}}}".format(optionName, signText))
+    print("/give @p oak_sign{{BlockEntityTag:{{front_text:{{messages:[\'{{\"text\":\"\"}}\',\'{{\"text\":\"{1}\",\"color\":\"dark_aqua\",\"clickEvent\":{{\"action\":\"run_command\",\"value\":\"trigger Trig_{0} add 1\"}}}}\',\'{{\"text\":\"uninitialized\",\"color\":\"green\"}}\',\'{{\"text\":\"\"}}\']}},is_waxed:1b}}}} 1".format(optionName, signText))
 
     # Create variables in init
     print("### Init function ###")
