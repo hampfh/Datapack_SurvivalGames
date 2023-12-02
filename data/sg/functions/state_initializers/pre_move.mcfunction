@@ -18,6 +18,6 @@ tp @a[tag=Movable, limit=1] ~10000 400 ~
 kill @e[type=minecraft:armor_stand, name=Anchor]
 
 # Movable object
-effect give @a[tag=Movable] minecraft:blindness 1000000 255 true
-effect give @a[tag=Movable] minecraft:slowness 1000000 255 true
-effect give @a[tag=Movable] minecraft:slow_falling 1000000 255 true
+effect give @a[tag=Movable] minecraft:blindness infinite 255 true
+effect give @a[tag=Movable] minecraft:slowness infinite 255 true
+effect give @a[tag=Movable] minecraft:slow_falling infinite 255 true

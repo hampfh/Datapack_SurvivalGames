@@ -1,3 +1,5 @@
+# Every iteration one player per team is added to the team
+# This file is executed multiple times
 team join TEAM_1 @r[team=,gamemode=!creative]
 team join TEAM_2 @r[team=,gamemode=!creative]
 team join TEAM_3 @r[team=,gamemode=!creative]

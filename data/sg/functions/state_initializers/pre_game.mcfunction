@@ -47,12 +47,14 @@ team join INTERNAL_SIDEBAR Minutes:
 function sg:internal/start_border
 
 # Give all players invisibility in the start
-effect give @a[tag=InGame] minecraft:invisibility 70 1 true
+effect give @a[tag=InGame] minecraft:invisibility 60 1 true
 
 # Show title
 title @a[tag=InGame] times 10 100 10
 title @a[tag=InGame] subtitle {"text":"Last man standing wins!","color":"dark_aqua"}
 title @a[tag=InGame] title {"text":"Fight!","bold":true,"color":"dark_aqua"}
+
+tellraw @a[tag=InGame] {"text":"You have 1 minute of invisibility!","color":"dark_aqua"}
 
 # Spread loot crates if they are enabled
 execute if score #game LootChests matches 1.. run function sg:internal/loot_chests/spawn

@@ -14,12 +14,12 @@ execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ 255 ~ run fil
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ 255 ~ run fill ~9 ~-11 ~9 ~-10 ~-11 ~-10 minecraft:grass_block
 
 # Give effects to players
-effect give @a[tag=InGame] minecraft:blindness 100000 255 true
-effect give @a[tag=InGame] minecraft:jump_boost 100000 250 true
-effect give @a[tag=InGame] minecraft:mining_fatigue 100000 250 true
-effect give @a[tag=InGame] minecraft:weakness 100000 250 true
-effect give @a[tag=InGame] minecraft:slowness 100000 250 true
-effect give @a[tag=InGame] minecraft:saturation 100000 250 true
+effect give @a[tag=InGame] minecraft:blindness infinite 255 true
+effect give @a[tag=InGame] minecraft:jump_boost infinite 250 true
+effect give @a[tag=InGame] minecraft:mining_fatigue infinite 250 true
+effect give @a[tag=InGame] minecraft:weakness infinite 250 true
+effect give @a[tag=InGame] minecraft:slowness infinite 250 true
+effect give @a[tag=InGame] minecraft:saturation infinite 250 true
 
 # Teleport players to arena
 execute at @e[type=minecraft:armor_stand,name=Anchor] positioned ~ 246 ~ run spreadplayers ~ ~ 4 9 false @a[tag=InGame]

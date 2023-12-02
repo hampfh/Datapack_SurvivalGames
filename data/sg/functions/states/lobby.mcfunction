@@ -11,9 +11,11 @@ execute if score #game Difficulty matches 2 run difficulty normal
 execute if score #game Difficulty matches 3 run difficulty hard
 
 # Apply effects
-effect give @a[gamemode=!creative,gamemode=!spectator] minecraft:resistance 1000000 255 true
-effect give @a[gamemode=!creative,gamemode=!spectator] minecraft:saturation 1000000 255 true
-effect give @a[gamemode=!creative,gamemode=!spectator,tag=Winner] minecraft:glowing 1000000 255 true
+effect give @a[gamemode=!creative,gamemode=!spectator] minecraft:resistance infinite 255 true
+effect give @a[gamemode=!creative,gamemode=!spectator] minecraft:saturation infinite 255 true
+effect give @a[gamemode=!creative,gamemode=!spectator] minecraft:regeneration infinite 255 true
+# The winner gets a glowing effect
+effect give @a[gamemode=!creative,gamemode=!spectator,tag=Winner] minecraft:glowing infinite 255 true
 
 # Teleport all players out of range back to lobby
 execute at @e[type=minecraft:armor_stand, name=Anchor] positioned ~ 205 ~ run tp @a[gamemode=!creative, gamemode=!spectator,distance=30.., tag=!Movable] ~ 205 ~
