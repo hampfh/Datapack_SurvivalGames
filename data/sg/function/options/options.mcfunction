@@ -41,7 +41,7 @@ execute if score #game GameState matches 0 as @a[scores={Trig_ShowPrgress=1..}] 
 execute as @a[scores={Trig_ShowPrgress=1..}] run scoreboard players set @s Trig_ShowPrgress 0
 ###################### Move map ######################
 execute if score #game GameState matches 0 run scoreboard players enable @a[tag=Moderator] Trig_NewMap
-execute if score #game GameState matches 0 as @a[scores={Trig_NewMap=1..}] run tellraw @a ["",{"text":"Generating new terrain...","color":"dark_aqua","clickEvent":{"action":"open_url","value":"www.github.com/hampfh"},"hoverEvent":{"action":"show_item","value":"Open site"}}]
+execute if score #game GameState matches 0 as @a[scores={Trig_NewMap=1..}] run tellraw @a ["",{"text":"Generating new terrain...","color":"dark_aqua"}]
 execute if score #game GameState matches 0 as @a[scores={Trig_NewMap=1..}] run function sg:state_initializers/pre_move
 execute as @a[scores={Trig_NewMap=1..}] run scoreboard players set @s Trig_NewMap 0
 ###################### UHCMode ######################
