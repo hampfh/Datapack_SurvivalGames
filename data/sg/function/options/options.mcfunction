@@ -60,8 +60,9 @@ execute if score #game GameState matches 0 as @a[scores={Trig_FallDamage=1..}] i
 execute as @a[scores={Trig_FallDamage=1..}] run scoreboard players set @s Trig_FallDamage 0
 ###################### RandTeams ######################
 execute if score #game GameState matches 0 run scoreboard players enable @a[tag=Moderator] Trig_RandTeams
-execute if score #game GameState matches 0 as @a[scores={Trig_RandTeams=1..}] run scoreboard players add #game RandTeams 1
-execute if score #game GameState matches 0 if score #game RandTeams matches 2.. run scoreboard players set #game RandTeams 0
+execute if score #game Teams matches 1 if score #game GameState matches 0 as @a[scores={Trig_RandTeams=1..}] run scoreboard players add #game RandTeams 1
+execute if score #game Teams matches 1 if score #game GameState matches 0 if score #game RandTeams matches 2.. run scoreboard players set #game RandTeams 0
+execute if score #game Teams matches 0 if score #game GameState matches 0 as @a[scores={Trig_RandTeams=1..}] run tellraw @s ["",{"text":"Teams are not enabled","color":"red"}]
 execute if score #game GameState matches 0 as @a[scores={Trig_RandTeams=1..}] if score #game RandTeams matches 1.. run function sg:internal/teams/clear_triggers
 execute as @a[scores={Trig_RandTeams=1..}] run scoreboard players set @s Trig_RandTeams 0
 ###################### DoInsomnia ######################
